@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
       render action: :new
     else
       set_new_tweet_with_params
+      render :new if @tweet.invalid?
     end
   end
 
