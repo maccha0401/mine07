@@ -1,0 +1,31 @@
+<%= form_with(model: @tweet, url: new_or_edit_tweet_path, local: true) do |form| %>
+  <!--■エラーの表示。-->
+  <% if @tweet.errors.any? %>
+    <div class="errors">
+      <ul>
+        <% @tweet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!--■ここから入力。-->
+  <div class="form_field">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-2"><%= form.label :content, "つぶやっきー" %></div>
+        <div class="col-sm-4 col-md-2"><%= form.text_field :content, requred: true %></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="offset-sm-4 offset-md-2">
+        <%= form.submit "つぶやき！" %>
+      </div>
+      <div class="offset-sm-4 offset-md-2">
+        <%= link_to "つぶやかない！！", :back, type: "button", class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+<% end %>

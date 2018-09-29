@@ -1,0 +1,25 @@
+<h1>つぶやく？</h1>
+<% puts "--------------------------------" %>
+<% p @tweet %>
+<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
+<div class="form_field">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-md-2"><%= form.label :content, "つぶやっきー" %></div>
+      <div class="col-sm-4 col-md-2"><%= @tweet.content %></div>
+      <%= form.hidden_field :content %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row row-back">
+    <div class="offset-sm-4 offset-md-2">
+      <%= form.submit "つぶやく！" %>
+    <% end %>
+    <%= form_with(model: @tweet, url: new_tweet_path, method: :get, local: true) do |form| %>
+      <%= form.hidden_field :content %>
+      <%= form.submit "やーめた♪", name: "back" %>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>みんなのつぶやき♪</h1>
+<table class="contailer">
+  <% @tweets.each do |tweet| %>
+    <ul class="row">
+      <li class="col-sm-4 col-md-2"><%= tweet.content %></li>
+      <li class="col-sm-4 col-md-1"><%= link_to "編集", edit_tweet_path(tweet.id), method: :get, type: "button", class: "btn btn-default" %></li>
+      <li class="col-sm-4 col-md-1"><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "消すの？"}, type: "button", class: "btn btn-default" %></li>
+    </ul>
+  <% end %>
+</table>

@@ -1,0 +1,64 @@
+html body {
+  min-width: 300px;
+  background-color: beige;
+}
+header {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: ivory;
+}
+footer {
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: ivory;
+}
+.nav-footer {
+  display: flex;
+  align-items: center;
+}
+.nav-footer p {
+  color: darkgrey;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  padding: 30px;
+  margin-bottom: 80px;
+}
+ul {
+  list-style: none;
+}
+a, a:hover {
+  color: inherit;
+}
+// flash 用。
+.danger {
+  color: red;
+}
+.notice {
+  color: green;
+}
+// view-helper によるボタンとbootstrap のものの差異を埋める。
+.btn {
+  vertical-align: top;
+  line-height: 1;
+}
+// bootstrap 用。
+button a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  margin-left: 2vw;
+}
+.col-sm-4, .col-md-2 {
+  margin: 0;
+  padding: 0;
+}

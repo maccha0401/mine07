@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mine07</title>
+    <%= csrf_meta_tags %>
+    <head>
+      <meta name="viewport" content="width=device-width">
+    </head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- ■ヘッダー -->
+    <header>
+      <button type="button" class="btn btn-primary badge-pill"><%= link_to "つぶやきいちらん", :root %></button>
+      <button type="button" class="btn btn-secondary badge-pill"><%= link_to "つぶやく", new_tweet_path %></button>
+    </header>
+    
+    <div class="main">
+      <!-- ■flash の表示 -->
+      <div class="flash">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: key) %>
+        <% end %>
+      </div>
+
+      <!-- ■本文 -->
+      <div class="main_content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <!-- ■ヘッダー -->
+    <footer>
+      <div class="nav-footer"><p>つぶやくのと写真投稿するのを作りました！</p></div>
+    </footer>
+  </body>
+</html>
